@@ -1,7 +1,7 @@
 f = open("/Users/Max/Desktop/text.txt", encoding="utf-8")
 text = f.read()
 f.close()
-text.split(" ")
+text = text.split(" ")
 c1 = 0
 c2 = 0
 for word in text:

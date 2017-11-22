@@ -12,6 +12,5 @@ for word in text:
         c1 += 1
     else:
         c2 += 1
-    print(word)
 res = c1/(c2+c1)*100
 print("Процент слов, заканчивающихся точкой или запятой =", res, "%")

@@ -30,5 +30,5 @@ with open("/Users/Max/Downloads/quotes.txt", "r", encoding='utf-8') as f:
             if entry in quote[0]:
                 flag = 1
                 print(quote[1], "\t", quote[0])
-    if flag == 0:
+        if flag == 0:
                 print("Вхождения слова", entry, "не было")

@@ -1,17 +1,21 @@
-def text():
-    with open ("/Users/Max/Desktop/text.txt", "r", encoding = "utf-8") as f:
-#пишу абсолютные пути, потому что мне так удобнее. haters gonna hate 
+def text(name):
+    with open ("/Users/Max/Desktop/" + name + ".txt", "r", encoding = "utf-8") as f:
+#пишу абсолютные пути, потому что мне так удобнее. haters gonna hate
         return (f.read()).split(" ")
 
-text = text()
-count_ed = 0
-count_ied = 0
-for word in text:
-    if word[-2:] == "ed":
-        count_ed += 1
-        if word[-3:] == "ied":
-            count_ied += 1
-print("Словоформ на '-ed': ",count_ed)
-print("Словоформ на '-ied': ",count_ied)
+def count(text):
+    count = [0,0]
+    for word in text:
+        if word[-2:] == "ed":
+            count[0] += 1
+            if word[-3:] == "ied":
+                count[1] += 1
+    return count
+
+filename = input("Введите имя файла с текстом (без расширения): ")
+text = text(filename)
+count = count(text)
+print("Словоформ на '-ed': ",count[0])
+print("Словоформ на '-ied': ",count[1])
 
 #а причем тут словари? 

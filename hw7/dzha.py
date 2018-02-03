@@ -1,6 +1,5 @@
 def text(name):
-    with open ("/Users/Max/Desktop/" + name + ".txt", "r", encoding = "utf-8") as f:
-#пишу абсолютные пути, потому что мне так удобнее. haters gonna hate
+    with open (name + ".txt", "r", encoding = "utf-8") as f:
         return (f.read()).split(" ")
 
 def count(text):

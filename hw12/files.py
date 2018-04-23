@@ -1,10 +1,5 @@
 import re
 import os
-
 def proga():
-    file_list = os.listdir()
-    file_list = re.findall("[a-z]+\.[a-z]+", str(file_list), flags = re.IGNORECASE)
-    return file_list
-
-print(proga())
-print(len(proga()))
+    return re.findall("[a-z]+\.[a-z]+", str(os.listdir()), flags = re.IGNORECASE)
+print(proga(),"\n",len(proga())) #первый раз залил до дедлайна, просто хотел, чтобы прога была в 5 строк

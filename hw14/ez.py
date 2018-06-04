@@ -6,12 +6,15 @@ def readfile ():
         return text
 
 def killpunctuation (text):
-    cleartext = re.sub(u"[^а-яА-Я0-9 \\n]", "", text)
-    return cleartext
+    text = re.sub(u"[^а-яА-Я0-9!?. \\n]", "", text)
+    text = re.sub(u"[!?.]", "Ə", text)
+    return text
 
 def makedic(text):
-    text = text.split()
-    dic = {i: len(i) for i in text}
+    text = text.split("Ə")
+    dic = {sent: sent.split() for sent in text}
+    for key, value in dic.items():
+        dic[key] = {word: len(word) for word in key.split()}
     return dic
 
 print (makedic(killpunctuation(readfile())))
